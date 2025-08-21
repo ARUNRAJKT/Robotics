@@ -46,7 +46,7 @@ function Navbar() {
             to={item.to}
             style={({ isActive }) => ({
               ...baseStyle,
-              fontWeight: isActive ? 700 : 300, // only this changes
+              fontWeight: isActive ? 700 : 300, 
             })}
           >
             {item.label}
