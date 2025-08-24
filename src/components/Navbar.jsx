@@ -1,60 +1,85 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 
-function Navbar() {
-  const baseStyle = {
-    fontFamily: "Red Rose",
-    fontSize: "16px",
-    textTransform: "uppercase",
-    textDecoration: "none",
-    color: "rgba(31, 31, 31, 1)",
+function Navbar({ onContactClick }) {
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    onContactClick();
   };
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "15px 45px",
-        background: "#f8f8f8",
-        height: "90px",
-      }}
-    >
-      {/* Left side: Logo */}
-      <div style={{ display: "flex", alignItems: "center" }}>
+    <nav style={styles.container}>
+      {/* Left side*/}
+      <div style={styles.logoContainer}>
         <img src={Logo} alt="Logo" />
       </div>
 
-      {/* Right side: Links */}
-      <div
-        style={{
-          display: "flex",
-          gap: "42px",
-        }}
-      >
+      {/* Right side */}
+      <div style={styles.linksContainer}>
         {[
           { to: "/", label: "HOME" },
           { to: "/products-services", label: "PRODUCTS & SERVICES" },
           { to: "/case-studies", label: "CASE STUDIES" },
           { to: "/research", label: "RESEARCH" },
           { to: "/blog", label: "BLOG" },
-          { to: "/contact", label: "CONTACT US" },
         ].map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             style={({ isActive }) => ({
-              ...baseStyle,
-              fontWeight: isActive ? 700 : 300, 
+              ...styles.baseLink,
+              fontWeight: isActive ? 700 : 300,
             })}
           >
             {item.label}
           </NavLink>
         ))}
+
+        {/* Contact link */}
+        <span
+          onClick={handleContactClick}
+          style={styles.contactLink}
+        >
+          CONTACT US
+        </span>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
+
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "15px 45px",
+    background: "#f8f8f8",
+    height: "90px",
+  },
+  logoContainer: {
+    display: "flex",
+    alignItems: "center",
+  },
+  linksContainer: {
+    display: "flex",
+    gap: "42px",
+  },
+  baseLink: {
+    fontFamily: "Red Rose",
+    fontSize: "16px",
+    textTransform: "uppercase",
+    textDecoration: "none",
+    color: "rgba(31, 31, 31, 1)",
+  },
+  contactLink: {
+    fontFamily: "Red Rose",
+    fontSize: "16px",
+    textTransform: "uppercase",
+    textDecoration: "none",
+    color: "rgba(31, 31, 31, 1)",
+    fontWeight: 300,
+    cursor: "pointer",
+  },
+};

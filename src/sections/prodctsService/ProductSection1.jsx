@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Card from "../components/Card";
-import Robot1 from "../assets/about/robot1.svg";
-import Robot2 from "../assets/about/robot2.svg";
-import Robot3 from "../assets/about/robot3.svg";
-import Robot5 from "../assets/about/robot5.svg";
+import Card from "../../components/Card";
+import Robot1 from "../../assets/about/robot1.svg";
+import Robot2 from "../../assets/about/robot2.svg";
+import Robot3 from "../../assets/about/robot3.svg";
+import Robot5 from "../../assets/about/robot5.svg";
 
-export default function Rentals() {
+export default function ProductSection1() {
   const [activeTab, setActiveTab] = useState("products");
 
   const robots = [
@@ -15,6 +15,22 @@ export default function Rentals() {
         "The long barrow was built on land previously inhabited in the Mesolithic period. It consisted of a...",
       image: Robot5,
       tags: ["RESTAURANTS", "MALLS", "HOSPITALS"],
+      price: "4200 AED",
+    },
+    {
+      title: "Temi Robot",
+      description:
+        "This innovative trash disposal solution is designed to minimize waste in urban areas, promoting recycling and reducing...",
+      image: Robot3,
+      tags: ["HEALTHCARE", "OFFICES", "RETAIL SHOWROOMS"],
+      price: "4200 AED",
+    },
+    {
+      title: "Alice Pro",
+      description:
+        "Equipped with state-of-the-art navigation technology, this drone ensures timely delivery in congested areas, enhancing...",
+      image: Robot2,
+      tags: ["CORPORATE RECEPTIONS", "EVENTS", "EXHIBITIONS"],
       price: "4200 AED",
     },
     {
@@ -70,10 +86,6 @@ export default function Rentals() {
             isQuoteMode={activeTab === "quote"}
           />
         ))}
-      </div>
-
-      <div style={styles.viewAllWrapper}>
-        <button style={styles.viewAllButton}>View All</button>
       </div>
     </section>
   );

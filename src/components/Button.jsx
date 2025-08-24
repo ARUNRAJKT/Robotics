@@ -5,15 +5,14 @@ function Button({ label, onClick, primary }) {
     <button
       onClick={onClick}
       style={{
-        width: primary ? "149px" : "91px",   
         height: "40px",
         padding: "10px",
-         borderRadius: "0", 
+        borderRadius: "0",
         border: primary ? "1px solid #FFFFFF" : "none",
         background: primary ? "transparent" : "#007CFF",
         color: "#FFFFFF",
-        fontSize: "14px",
-        fontWeight: "500",
+        fontSize: "16px",
+        fontWeight: 400,
         cursor: "pointer",
         transition: "all 0.3s ease",
       }}

@@ -50,7 +50,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Line */}
+      {/* Bottom */}
       <div style={{ textAlign: "center", marginTop: "2rem", borderTop: "1px solid #ddd", paddingTop: "1rem", color: "#555" }}>
         Copyright © 2025 Lunar Enterprises. All rights reserved
       </div>

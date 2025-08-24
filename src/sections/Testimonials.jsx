@@ -1,4 +1,4 @@
-// sections/Testimonials.jsx
+
 import TestimonialCard from "../components/TestimonialCard";
 import Image1 from "../assets/testimonial/image1.svg";
 import Image2 from "../assets/testimonial/image2.svg";
@@ -60,7 +60,6 @@ export default function Testimonials() {
         robotics.
       </p>
 
-      {/* Top row → left */}
       <div
         style={{
           display: "flex",
@@ -74,7 +73,7 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Bottom row → right */}
+ 
       <div
         style={{
           display: "flex",
@@ -89,7 +88,7 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Animations */}
+
       <style>
         {`
           @keyframes slideLeft {
